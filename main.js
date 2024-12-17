@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize MindAR with the container and image target configuration
     mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,                // Use the whole page as the AR view
-      imageTargetSrc: './assets/targets/targets.mind' // Define the image target file
+      imageTargetSrc: './assets/targets/targetsd.mind' // Define the image target file
     });
     const {renderer, scene, camera} = mindarThree;
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     raccoonAnchor.group.add(raccoon.scene);
 
     // Load and add audio to the raccoon target
-    const audioClip1 = await loadAudio('./assets/sounds/musicband-background.mp3');
+    const audioClip1 = await loadAudio('./assets/sounds/sea.wav');
     const listener1 = new THREE.AudioListener();
     camera.add(listener1);
     const audio1 = new THREE.PositionalAudio(listener1);
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bearAnchor = mindarThree.addAnchor(1);
     bearAnchor.group.add(bear.scene);
 
-    const audioClip2 = await loadAudio('./assets/sounds/musicband-background.mp3');
+    const audioClip2 = await loadAudio('./assets/sounds/gala.wav');
     const listener2 = new THREE.AudioListener();
     camera.add(listener2);
     const audio2 = new THREE.PositionalAudio(listener2);
