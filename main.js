@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     scene.add(light);
 
     // Load the raccoon 3D model
-    const raccoon = await loadGLTF('./assets/models/musicband-bear/scene.gltf');
+    const raccoon = await loadGLTF('./assets/models/JIM_19/JIM_18.gltf');
     
     raccoon.scene.scale.set(0.1, 0.1, 0.1);  // Scale the model
     raccoon.scene.position.set(0, -0.4, 0);  // Set the model's position in the scene
 
     // Load the bear 3D model
-    const bear = await loadGLTF('./assets/models/musicband-raccoon/scene.gltf');
+    const bear = await loadGLTF('./assets/models/PHOTO_1/PHOTO.gltf');
     bear.scene.scale.set(0.1, 0.1, 0.1);
     bear.scene.position.set(0, -0.4, 0);
 
@@ -54,13 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     audio1.setBuffer(audioClip1);
     audio1.setRefDistance(100);
     audio1.setLoop(true);
+	audio1.setVolume(40);
 
     // Play/pause audio when the raccoon target is found/lost
     raccoonAnchor.onTargetFound = () => {
       audio1.play();
     };
     raccoonAnchor.onTargetLost = () => {
-      audio1.pause();
+      audio1.stop();
     };
 
     // Setup bear anchor with similar logic as the raccoon
@@ -75,12 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     audio2.setBuffer(audioClip2);
     audio2.setRefDistance(100);
     audio2.setLoop(true);
+	audio2.setVolume(40);
 
     bearAnchor.onTargetFound = () => {
       audio2.play();
     };
     bearAnchor.onTargetLost = () => {
-      audio2.pause();
+      audio2.stop();
     };
 
     // Setup video anchor for the third target
