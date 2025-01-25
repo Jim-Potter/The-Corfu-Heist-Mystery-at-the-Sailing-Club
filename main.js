@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     raccoonAnchor.group.add(raccoon.scene);
 
     // Load and add audio to the raccoon target
-    const audioClip1 = await loadAudio('./assets/sounds/Sea.wav');
+    const audioClip1 = await loadAudio('./assets/sounds/sea.wav');
     const listener1 = new THREE.AudioListener();
     camera.add(listener1);
     const audio1 = new THREE.PositionalAudio(listener1);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bearAnchor = mindarThree.addAnchor(1);
     bearAnchor.group.add(bear.scene);
 
-    const audioClip2 = await loadAudio('./assets/sounds/Gala.wav');
+    const audioClip2 = await loadAudio('./assets/sounds/gala.wav');
     const listener2 = new THREE.AudioListener();
     camera.add(listener2);
     const audio2 = new THREE.PositionalAudio(listener2);
